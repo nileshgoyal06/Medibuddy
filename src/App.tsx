@@ -24,6 +24,7 @@ const [medicines,setMedicines] = useState<Medicine[]>([]);
 const [selectedMedicine,setSelectedMedicine] = useState<Medicine | null>(null);
 const[loading,setLoading] = useState<boolean>(false);
 const[error,setError]=useState<string>("");
+const [hasSearched, setHasSearched] = useState<boolean>(false);
 
 // Trigger when user click on search button calls a API
 const handleSearch = async(): Promise<void> =>{
@@ -38,6 +39,7 @@ const handleSearch = async(): Promise<void> =>{
       setLoading(true);
       setError("");
       setSelectedMedicine(null);
+      setHasSearched(true);
 
       const url = `https://api.fda.gov/drug/label.json?search=openfda.brand_name:%22${search.trim()}%22&limit=20`;
 
@@ -95,7 +97,7 @@ return (
 
         {error && <p>{error}</p>}
 
-        {!loading && !error && medicines.length==0 && (
+        {hasSearched && !loading && !error && medicines.length==0 && (
           <p>No medicines Found.</p>
         )}
 
