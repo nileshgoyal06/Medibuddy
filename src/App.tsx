@@ -15,3 +15,9 @@ export interface Medicine{
   warnings?:string[];
   dosage_and_administration?:string[];
 }
+
+const [search,setSearch] = useState<string>("");
+const [medicines,setMedicines] = useState<Medicine[]>([]);
+const [selectedMedicine,setSelectedMedicine] = useState<Medicine | null>(null);
+const[loading,setLoading] = useState<boolean>(false);
+const[error,setError]=useState<string>("");
