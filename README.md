@@ -26,9 +26,7 @@ git clone https://github.com/nileshgoyal06/Medibuddy.git
 cd Medibuddy
 3. Install dependencies
 npm install
-4. Create .env file
-VITE_API_URL=https://api.fda.gov/drug/label.json
-5. Run the application
+4. Run the application
 npm run dev
 Live Demo
 
