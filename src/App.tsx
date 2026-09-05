@@ -44,7 +44,7 @@ const handleSearch = async(): Promise<void> =>{
       const response = await fetch(url);
 
       if(!response.ok){
-        throw new Error("Failed to fetch medicines");
+        throw new Error("No medicine found");
       }
 
       const data :{results?:Medicine[]}=await response.json();
