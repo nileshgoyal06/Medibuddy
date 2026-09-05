@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MedicineCrd from "./components/MedicineCard";
+import MedicineCard from "./components/MedicineCard";
 import MedicineDetails from "./components/MedicineDetails"
 export interface Medicine{
   id:string;
@@ -16,6 +16,8 @@ export interface Medicine{
   warnings?:string[];
   dosage_and_administration?:string[];
 }
+
+function App(){
 
 const [search,setSearch] = useState<string>("");
 const [medicines,setMedicines] = useState<Medicine[]>([]);
@@ -106,11 +108,13 @@ return (
         ))}
 
       </>
-
     )}
 
   </div>
 );
+}
+
+export default App;
 
 
 
