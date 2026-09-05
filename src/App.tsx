@@ -62,5 +62,11 @@ const handleSearch = async(): Promise<void> =>{
 };
 
 
+const handleMedicineClick =(medicine:Medicine):void =>{
+  console.log("Selected medicine:",medicine);
+  setSelectedMedicine(medicine);
+}
+
+
 
 
