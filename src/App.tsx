@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import MedicineCrd from "./components/MedicineCard";
+import MedicineDetails from "./components/MedicineDetails"
 export interface Medicine{
   id:string;
   
@@ -66,6 +67,51 @@ const handleMedicineClick =(medicine:Medicine):void =>{
   console.log("Selected medicine:",medicine);
   setSelectedMedicine(medicine);
 }
+
+return (
+  <div>
+    <h1>Medicine Search</h1>
+    { selectedMedicine ? (
+        <MedicineDetails
+        medicine ={selectedMedicine}
+        onBack={()=> selectedMedicine(null)}
+        />
+    ) : (
+      <>
+        <input 
+        type ="text"
+        value = {search}
+        onChange ={(e)=> setSearch(e.target.value)}
+        placeholder ="Search medicine"
+        />
+
+        <button onClick ={handleSearch}>
+          Search
+        </button>
+
+        {loading && <p>loading...</p>}
+
+        {error && <p>{error}</p>}
+
+        {!loading && !error && medicines.length==0 && (
+          <p>No medicines Found.</p>
+        )}
+
+        {medicines.map((medicine)=>(
+          <MedicineCard
+            key ={medicine.id}
+            medicine = {medicine}
+            onClick = {()=>handleMedicineClick(medicine)}
+            />
+        ))}
+
+      </>
+
+    )}
+
+  </div>
+);
+
 
 
 
