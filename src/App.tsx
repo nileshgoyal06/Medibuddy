@@ -71,7 +71,7 @@ const handleMedicineClick =(medicine:Medicine):void =>{
 }
 
 return (
-  <div>
+  <div className="medicine-list">
     <h1>Medicine Search</h1>
     { selectedMedicine ? (
         <MedicineDetails

@@ -10,7 +10,7 @@ function MedicineCard({
 }: MedicineCardProps) {
 
   return (
-    <div onClick={onClick}>
+    <div className="medicine-card" onClick={onClick}>
       <h2>
         {medicine.openfda?.brand_name?.[0]}
       </h2>

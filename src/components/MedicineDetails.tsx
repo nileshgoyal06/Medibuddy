@@ -11,7 +11,7 @@ function MedicineDetails({
 
   return (
 
-    <div>
+    <div className="details">
       <button onClick={onBack}>
         Back to Results
       </button>
