@@ -1,4 +1,4 @@
-import { Medicine } from "../App";
+import type { Medicine } from "../App";
 interface MedicineDetailsProps {
   medicine: Medicine;
   onBack: () => void;

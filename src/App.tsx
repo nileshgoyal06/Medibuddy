@@ -76,7 +76,7 @@ return (
     { selectedMedicine ? (
         <MedicineDetails
         medicine ={selectedMedicine}
-        onBack={()=> selectedMedicine(null)}
+        onBack={()=> setSelectedMedicine(null)}
         />
     ) : (
       <>
